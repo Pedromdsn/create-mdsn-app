@@ -3,3 +3,4 @@ interface Answers {
 	name: string
 	dependenciesManager: "npm" | "yarn" | "pnpm"
 }
+

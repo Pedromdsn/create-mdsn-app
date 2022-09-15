@@ -12,8 +12,9 @@ const main = async () => {
 	config.PROJECTS.forEach(async (project) => {
 		const projectDir = join(templateDir, project.name)
 		await clone(project.url, "main", projectDir)
-		await remove(`${projectDir}"/.git"`)
-		await remove(`${projectDir}"/yarn.lock"`)
+		
+		await remove(join(projectDir, ".git"))
+		await remove(join(projectDir, "yarn.lock"))
 	})
 }
 

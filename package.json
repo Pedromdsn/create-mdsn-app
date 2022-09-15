@@ -11,7 +11,7 @@
 	"scripts": {
 		"start": "ts-node src",
 		"sync": "ts-node src/build/loadTemplates.ts",
-		"build": "tsc -p . && node dist/src/build/post && npm link"
+		"build": "sync && tsc -p . && node dist/src/build/post && npm link"
 	},
 	"dependencies": {
 		"chalk": "^4.0.0",
