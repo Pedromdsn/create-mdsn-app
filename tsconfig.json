@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2018",
     "module": "NodeNext",
     "lib": [
       "dom",
@@ -20,14 +20,19 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "exclude": [
     "node_modules",
-    "./src/templates/**",
+    "./templates/**",
     "./dist/**/*"
   ],
   "include": [
     "./src/**/*.ts",
-  ]
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
 }

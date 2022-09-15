@@ -1,12 +1,5 @@
 import execa from "execa"
 
-export type SupportedPackageManagers = "npm" | "yarn" | "pnpm"
-
-interface InstallConfig {
-	prefer?: SupportedPackageManagers
-	cwd?: string
-}
-
 export const projectInstall = async ({ prefer, cwd }: InstallConfig) => {
 	const manager = await getManager(prefer)
 	if (!allowedDependencyManager(manager)) return false

@@ -6,8 +6,9 @@ import { join } from "path"
 import updateNotifier from "update-notifier"
 
 import packageJson from "../package.json"
+import { allowedDependencyManager, projectInstall } from "./features/dependenciesManager"
 import questions from "./questions"
-import { allowedDependencyManager, capitalize, projectInstall } from "./utils"
+import { capitalize } from "./utils"
 
 const main = async () => {
 	const notifier = updateNotifier({ pkg: packageJson })
@@ -19,16 +20,12 @@ const main = async () => {
 
 	const { type, name, dependenciesManager } = await prompt(questions)
 
-	const templateDir = join(__dirname, "templates", type)
+	const templateDir = join(__dirname, "..", "templates", type)
 	const targetDir = join(process.cwd(), name)
 
 	console.log(`Creating project ${capitalize(type)} in ${chalk.blue(targetDir)}`)
 
 	await copy(templateDir, targetDir)
-
-	// Remove unnecessary files
-	await remove(join(targetDir, ".git"))
-	await remove(join(targetDir, "yarn.lock"))
 
 	console.log("Installing packages.. This might take a couple of minutes.")
 

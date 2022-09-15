@@ -2,6 +2,8 @@ import { pathExists } from "fs-extra"
 import { QuestionCollection } from "inquirer"
 import { join } from "path"
 
+import { templatesSerializedName } from "./features/getTemplates"
+
 const questions: QuestionCollection<Answers> = [
 	{
 		type: "input",
@@ -27,7 +29,7 @@ const questions: QuestionCollection<Answers> = [
 		type: "list",
 		message: "Type of project:",
 		name: "type",
-		choices: ["Frontend", "Backend"],
+		choices: templatesSerializedName,
 		filter(input) {
 			return input.toLowerCase()
 		},

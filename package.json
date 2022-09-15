@@ -10,21 +10,23 @@
 	},
 	"scripts": {
 		"start": "ts-node src",
-		"sync": "cd src/templates && cd backend && git pull -f && cd ../frontend && git pull -f && cd ../..",
-		"build": "tsc -p ."
+		"sync": "ts-node src/build/loadTemplates.ts",
+		"build": "tsc -p . && node dist/src/build/post && npm link"
 	},
 	"dependencies": {
 		"chalk": "^4.0.0",
 		"execa": "^5.0.0",
 		"fs-extra": "^10.1.0",
 		"inquirer": "^8.0.0",
-		"update-notifier": "^5.0.0"
+		"update-notifier": "^5.0.1"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^9.0.13",
 		"@types/inquirer": "^8.0.0",
 		"@types/node": "^18.7.18",
 		"@types/update-notifier": "^6.0.1",
+		"git-repo-clone": "^0.3.2",
+		"tsconfig-paths": "^4.1.0",
 		"typescript": "^4.8.3"
 	}
 }
