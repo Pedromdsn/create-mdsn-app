@@ -1,7 +1,7 @@
 {
 	"name": "create-mdsn-app",
 	"description": "Pedromdsn Boilerplates",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"author": "Pedromdsn <me@pedromdsn.com>",
 	"main": "dist/src/index.js",
 	"license": "MIT",
