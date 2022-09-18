@@ -1,13 +1,22 @@
 {
 	"name": "create-mdsn-app",
 	"description": "Pedromdsn Boilerplates",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"author": "Pedromdsn <me@pedromdsn.com>",
 	"main": "dist/src/index.js",
 	"license": "MIT",
 	"bin": {
 		"create-mdsn-app": "dist/src/index.js"
 	},
+	"keywords": [
+		"create-mdsn-app",
+		"react",
+		"node",
+		"nextjs",
+		"express",
+		"template",
+		"startKit"
+	],
 	"scripts": {
 		"start": "ts-node src",
 		"sync": "ts-node src/build/loadTemplates.ts",

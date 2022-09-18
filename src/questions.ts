@@ -2,6 +2,7 @@ import { pathExists } from "fs-extra"
 import { QuestionCollection } from "inquirer"
 import { join } from "path"
 
+import config from "./config"
 import { templatesSerializedName } from "./features/getTemplates"
 
 const questions: QuestionCollection<Answers> = [
@@ -29,7 +30,7 @@ const questions: QuestionCollection<Answers> = [
 		type: "list",
 		message: "Type of project:",
 		name: "type",
-		choices: templatesSerializedName,
+		choices: config.PROJECTS.map((project) => (project.name)),
 		filter(input) {
 			return input.toLowerCase()
 		},
