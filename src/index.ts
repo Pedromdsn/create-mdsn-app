@@ -44,6 +44,4 @@ const main = async () => {
 	console.log(" And start coding!")
 }
 
-console.log("\n")
 main()
-console.log("\n")
