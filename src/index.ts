@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import chalk from "chalk"
-import { copy, remove } from "fs-extra"
+import { copy } from "fs-extra"
 import { prompt } from "inquirer"
 import { join } from "path"
 import updateNotifier from "update-notifier"
@@ -41,7 +41,7 @@ const main = async () => {
 	console.log()
 
 	console.log(` ${chalk.cyan("$ cd")} ${name}`)
-	console.log(` And start coding!`)
+	console.log(" And start coding!")
 }
 
 console.log("\n")
