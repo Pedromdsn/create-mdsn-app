@@ -1,7 +1,7 @@
 {
 	"name": "create-mdsn-app",
 	"description": "Pedromdsn Boilerplates",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"author": "Pedromdsn <me@pedromdsn.com>",
 	"main": "dist/src/index.js",
 	"license": "MIT",
@@ -20,7 +20,7 @@
 	"scripts": {
 		"start": "ts-node src",
 		"sync": "ts-node src/build/loadTemplates.ts",
-		"build": "sync && tsc -p . && node dist/src/build/post && npm link",
+		"build": "npm run sync && tsc -p . && node dist/src/build/post && npm link",
 		"pub": "npm run build && npm publish",
 		"lint": "eslint src --ext .ts,.tsx",
 		"lint:fix": "eslint src --ext .ts,.tsx --fix"
