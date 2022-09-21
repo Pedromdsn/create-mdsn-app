@@ -6,7 +6,8 @@ export const projectInstall = async ({ prefer, cwd }: InstallConfig) => {
 
 	const command = commands[manager]
 
-	return !!execa(command, { cwd, stdio: "inherit" })
+	const done = await execa(command, { cwd, stdio: "inherit" })
+	return !!done
 }
 
 const isManagerInstalled = async (manager: SupportedPackageManagers) => {
