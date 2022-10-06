@@ -12,18 +12,18 @@ const questions: QuestionCollection<Answers> = [
 		default: "mdsn-project",
 		async validate(input: string) {
 			const oneWord = input.split(" ").length === 1
-			if (!oneWord) console.log("\nProject name can't contain spaces")
+      if (!oneWord) console.log("\nProject name can't contain spaces")
 
-			const targetDir = join(process.cwd(), input)
-			const existTargetDir = await pathExists(targetDir)
+      const targetDir = join(process.cwd(), input)
+      const existTargetDir = await pathExists(targetDir)
 
-			if (existTargetDir) console.log("\nTarget directory already exists")
+      if (existTargetDir) console.log("\nTarget directory already exists")
 
-			return oneWord && !existTargetDir
-		},
+      return oneWord && !existTargetDir
+    },
 		filter(input) {
 			return input.toLowerCase()
-		},
+    },
 	},
 	{
 		type: "list",
@@ -32,7 +32,7 @@ const questions: QuestionCollection<Answers> = [
 		choices: config.PROJECTS.map(({ name }) => name),
 		filter(input) {
 			return input.toLowerCase()
-		},
+    },
 	},
 	{
 		type: "list",
@@ -41,7 +41,7 @@ const questions: QuestionCollection<Answers> = [
 		choices: ["Yarn", "NPM", "Pnpm"],
 		filter(input) {
 			return input.toLowerCase()
-		},
+    },
 	},
 ]
 

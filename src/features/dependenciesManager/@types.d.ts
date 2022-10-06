@@ -1,6 +1,6 @@
-type SupportedPackageManagers = "npm" | "yarn" | "pnpm"
+type SupportedPackageManagers = "npm" | "yarn" | "pnpm";
 
 interface InstallConfig {
-	prefer?: SupportedPackageManagers
-	cwd?: string
+  prefer?: SupportedPackageManagers;
+  cwd?: string;
 }

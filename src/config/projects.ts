@@ -12,9 +12,9 @@ const PROJECTS: Project[] = [
 ]
 
 interface Project {
-	name: string
-	description: string
-	url: string
+  name: string;
+  description: string;
+  url: string;
 }
 
 export default Object.freeze(PROJECTS)

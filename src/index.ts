@@ -29,7 +29,8 @@ const main = async () => {
 
 	console.log("Installing packages.. This might take a couple of minutes.")
 
-	if (!allowedDependencyManager(dependenciesManager)) console.log(`Automatic installation don't work with ${dependenciesManager}. Please install dependencies manually.`)
+	if (!allowedDependencyManager(dependenciesManager))
+		console.log(`Automatic installation don't work with ${dependenciesManager}. Please install dependencies manually.`)
 
 	await projectInstall({ prefer: dependenciesManager, cwd: targetDir })
 
